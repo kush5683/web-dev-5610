@@ -59,10 +59,18 @@
       }
       a.btn:hover { background: var(--btn-hover); }
       a.btn:active { transform: translateY(1px); }
+      .hero { width: 100%; text-align: center; margin-bottom: 1rem; }
+      .hero h2 { margin: 0 0 .25rem; font-size: clamp(1.5rem, 3vw + 1rem, 2.25rem); font-weight: 700; }
+      .hero p { margin: 0 0 .75rem; opacity: 0.85; }
     </style>
   </head>
   <body>
     <main class="wrap">
+      <section class="hero" aria-label="Hero">
+        <h2>Kush Shah</h2>
+        <p>Explore projects, posts, and more.</p>
+        <a class="btn" href="https://www.kushshah.net" target="_blank" rel="noopener noreferrer">Visit kushshah.net</a>
+      </section>
       <h1>Pages</h1>
       <p>Select a page to open.</p>
       <div id="buttons" class="grid"></div>
