@@ -1,0 +1,163 @@
+<html>
+  <head>
+    <title>My Web Page</title>
+    <link rel="stylesheet" type="text/css" href="self-assessment.css" />
+  </head>
+  <body>
+    <main class="page">
+    <div class="nav">
+      <a href="#tags">Useful HTML Tags</a>
+      <a href="#seo-headers">SEO Headers</a>
+      <a href="#3x3-grid">3x3 Grid</a>
+      <a href="#box-model">Box Model</a>
+      <a href="#font-sizes">Font Sizes</a>
+      <a href="#positioning">Positioning</a>
+    </div>
+    <h1>HTML + CSS + JavaScript self assessment</h1>
+    <section id="tags">
+      <h1>10 most useful HTML tags</h1>
+      <ol>
+        <li>div</li>
+        <li>section</li>
+        <li>a</li>
+        <li>p</li>
+        <li>h1</li>
+        <li>ul</li>
+        <li>li</li>
+        <li>button</li>
+        <li>ol</li>
+        <li>img</li>
+      </ol>
+    </section>
+    <section id="seo-headers">
+      <h1>Important headers for SEO</h1>
+      <h3>
+        Sources:
+        <a
+          href="https://www.siteground.com/kb/which_are_the_most_important_seo_html_tags/"
+          >siteground.com</a
+        >,
+        <a href="https://www.searchenginejournal.com/on-page-seo/header-tags/"
+          >searchenginejournal.com</a
+        >
+      </h3>
+      <ul>
+        <li>title</li>
+        <li>meta</li>
+        <li>h1</li>
+        <li>alt text for images</li>
+        <li>li</li>
+        <li>links</li>
+        <li>bold / strong</li>
+        <li>canonical</li>
+      </ul>
+    </section>
+    <section id="3x3-grid">
+      <h1>3x3 without table or CSS</h1>
+      <h3>Just divs and spans</h3>
+
+      <div>
+        <div>
+          <span> <span><button onclick="console.log('1')">Click me 1 </button></span> <span><button onclick="console.log('2')">Click me 2 </button></span> <span><button onclick="console.log('3')">Click me 3 </button></span></span>
+        </div>
+        <div>
+          <span> <span><button onclick="console.log('4')">Click me 4 </button></span> <span><button onclick="console.log('5')">Click me 5 </button></span> <span><button onclick="console.log('6')">Click me 6 </button></span></span>
+        </div>
+        <div>
+          <span> <span><button onclick="console.log('7')">Click me 7 </button></span> <span><button onclick="console.log('8')">Click me 8 </button></span> <span><button onclick="console.log('9')">Click me 9</button></span></span>
+        </div>
+      </div>
+    </section>
+    <section id="box-model">
+       <h1>Box Model Gallery</h1>
+      <p>Rows show which property changes; columns show 0px, 5px, 10px.</p>
+      <div class="box-gallery" role="table" aria-label="Box model variations">
+        <div class="cell head" role="columnheader">Property \ Value</div>
+        <div class="cell head" role="columnheader">0px</div>
+        <div class="cell head" role="columnheader">5px</div>
+        <div class="cell head" role="columnheader">10px</div>
+        <div class="cell rowhead" role="rowheader">Margin</div>
+        <div class="cell">
+          <div class="demo margin v0">
+            <div class="content">Content</div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="demo margin v5">
+            <div class="content">Content</div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="demo margin v10">
+            <div class="content">Content</div>
+          </div>
+        </div>
+        <div class="cell rowhead" role="rowheader">Padding</div>
+        <div class="cell">
+          <div class="demo padding v0">
+            <div class="content">Content</div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="demo padding v5">
+            <div class="content">Content</div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="demo padding v10">
+            <div class="content">Content</div>
+          </div>
+        </div>
+        <div class="cell rowhead" role="rowheader">Border</div>
+        <div class="cell">
+          <div class="demo border v0">
+            <div class="content">Content</div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="demo border v5">
+            <div class="content">Content</div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="demo border v10">
+            <div class="content">Content</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="font-sizes">
+      <h2>CSS: Itemized List with 6 Font Sizes</h2>
+      <p>Same sentence, each with inline <code>font-size</code> using a mix of absolute and relative units. Each item explains when to use that unit.</p>
+      <div class="container">
+      <ul>
+        <li style="font-size: 12px;">The quick brown fox jumps over the lazy dog — px: precise control for tiny UI elements (e.g., 12px badge counter).</li>
+        <li style="font-size: 14pt;">The quick brown fox jumps over the lazy dog — pt: print-focused sizing (e.g., 14pt body text in print stylesheet).</li>
+        <li style="font-size: 1.5em;">The quick brown fox jumps over the lazy dog — em: scales with parent; great inside components (e.g., button text 1.5em of card text).</li>
+        <li style="font-size: 2rem;">The quick brown fox jumps over the lazy dog — rem: scales with root; ideal for global headings that respect user zoom.</li>
+        <li style="font-size: 120%;">The quick brown fox jumps over the lazy dog — %: small relative tweaks (e.g., subheading at 120% of body text).</li>
+        <li style="font-size: 4vw;">The quick brown fox jumps over the lazy dog — vw: responsive hero text (e.g., hero title sized by viewport width).</li>
+      </ul>
+      </div>
+    </section>
+    <section id="positioning">
+      <h2>CSS: Creative Positioning (4 options)</h2>
+      <div class="sticky-banner">
+        Sticky: sticks to the viewport edge once reached (e.g., a section header that stays visible while this section scrolls).
+      </div>
+      <div class="stage">
+        <div class="relative-card">Relative: offset without leaving flow (e.g., nudge an icon by 10px).</div>
+        <div class="absolute-badge">Absolute: pinned to the nearest positioned ancestor (e.g., a corner badge on a card).</div>
+        <p class="explain"><strong>Relative:</strong> Use for small, contextual nudges or to create a positioning context for absolute children.</p>
+        <p class="explain"><strong>Absolute:</strong> Use for overlays and corner pins within a card/container. The container should be positioned (e.g., the dashed stage).</p>
+      </div>
+      <p class="explain"><strong>Sticky:</strong> Great for in-page subheaders or CTA bars that should stick while the user scrolls through a section.</p>
+      <p class="explain"><strong>Fixed:</strong> Use for global UI that must always be visible (e.g., footer or a help button). This page’s footer is fixed to the bottom of the screen.</p>
+      <button class="fixed-help" type="button" title="Need help?" onclick="alert('You clicked a fixed position button!')">Click me</button>
+    </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Kush Shah</p>
+    </footer>
+  </body>
+</html>
