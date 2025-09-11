@@ -4,65 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pages</title>
-    <style>
-      :root {
-        color-scheme: light dark;
-        --bg: #0b0b0c;
-        --fg: #e7e7ea;
-        --btn-bg: #2d2d33;
-        --btn-fg: #ffffff;
-        --btn-hover: #3b3b42;
-      }
-      body {
-        margin: 0;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
-          Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-        display: grid;
-        place-items: center;
-        min-height: 100dvh;
-        background: var(--bg);
-        color: var(--fg);
-      }
-      .wrap {
-        width: min(720px, 92vw);
-        display: grid;
-        gap: 1rem;
-        justify-items: center;
-      }
-      h1 {
-        margin: 0 0 .25rem;
-        font-size: clamp(1.25rem, 2.5vw + 1rem, 2rem);
-        font-weight: 600;
-      }
-      p {
-        margin: 0 0 1rem;
-        opacity: 0.8;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: .75rem;
-        width: 100%;
-      }
-      a.btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        padding: 0.9rem 1.1rem;
-        border-radius: 10px;
-        background: var(--btn-bg);
-        color: var(--btn-fg);
-        border: 1px solid #00000040;
-        transition: background .15s ease, transform .02s ease-in-out;
-        font-weight: 600;
-      }
-      a.btn:hover { background: var(--btn-hover); }
-      a.btn:active { transform: translateY(1px); }
-      .hero { width: 100%; text-align: center; margin-bottom: 1rem; }
-      .hero h2 { margin: 0 0 .25rem; font-size: clamp(1.5rem, 3vw + 1rem, 2.25rem); font-weight: 700; }
-      .hero p { margin: 0 0 .75rem; opacity: 0.85; }
-    </style>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <main class="wrap">
@@ -71,7 +13,7 @@
         <p>Explore projects, posts, and more.</p>
         <a class="btn" href="https://www.kushshah.net" target="_blank" rel="noopener noreferrer">Visit kushshah.net</a>
       </section>
-      <h1>Pages</h1>
+      <h1>Assignments</h1>
       <p>Select a page to open.</p>
       <div id="buttons" class="grid"></div>
       <noscript>
