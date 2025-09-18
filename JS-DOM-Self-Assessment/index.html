@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="Dark">
+<head>
+    <!-- Metadata, responsive viewport, and main stylesheet link -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SF Stays Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sticky page header with title, description, and theme toggle control -->
+    <header class="page-header">
+        <div class="container page-header__content">
+            <div class="page-header__top">
+                <h1>San Francisco Stays Explorer</h1>
+                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light mode">
+                    <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+                    <span class="theme-toggle__text">Dark</span>
+                </button>
+            </div>
+            <p>Dive into the first 50 Airbnbs from the dataset, compare amenities, and discover your perfect stay.</p>
+        </div>
+    </header>
+
+    <!-- Primary controls: search input, status readout, and refinement dropdowns -->
+    <section class="tools" aria-label="Listing controls">
+        <div class="container tools__inner">
+            <div class="tools__filter">
+                <label for="amenity-filter">Filter by amenity</label>
+                <input id="amenity-filter" type="search" name="amenity-filter" placeholder="Try pool, kitchen, washer." autocomplete="off">
+            </div>
+            <p id="listing-status" class="tools__status" aria-live="polite">Loading listings...</p>
+        </div>
+        <div class="container tools__refinements" aria-label="Additional filters">
+            <div class="filter-group">
+                <label for="price-filter">Price</label>
+                <select id="price-filter" name="price-filter">
+                    <option value="any">Any price</option>
+                    <option value="lt150">Under $150</option>
+                    <option value="150-300">$150 - $300</option>
+                    <option value="gt300">Over $300</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="rating-filter">Rating</label>
+                <select id="rating-filter" name="rating-filter">
+                    <option value="any">Any rating</option>
+                    <option value="4">4.0+ stars</option>
+                    <option value="4.5">4.5+ stars</option>
+                    <option value="4.8">4.8+ stars</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="beds-filter">Beds</label>
+                <select id="beds-filter" name="beds-filter">
+                    <option value="any">Any beds</option>
+                    <option value="1">1+ bed</option>
+                    <option value="2">2+ beds</option>
+                    <option value="3">3+ beds</option>
+                    <option value="4">4+ beds</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic listing grid populated by script.js -->
+    <main id="listing-grid" class="listing-grid container" aria-live="polite"></main>
+
+    <!-- Template for each rendered listing card; cloned in JavaScript -->
+    <template id="listing-card-template">
+        <article class="listing-card">
+            <figure class="listing-card__media">
+                <img class="listing-card__thumbnail" alt="">
+            </figure>
+            <div class="listing-card__body">
+                <header class="listing-card__header">
+                    <h2 class="listing-card__title">
+                        <a class="listing-card__link" target="_blank" rel="noopener"></a>
+                    </h2>
+                    <p class="listing-card__meta"></p>
+                </header>
+                <p class="listing-card__description"></p>
+                <div class="listing-card__amenities">
+                    <h3>Amenities</h3>
+                    <ul></ul>
+                </div>
+            </div>
+            <footer class="listing-card__footer">
+                <div class="listing-card__host">
+                    <img class="listing-card__host-photo" alt="">
+                    <div class="listing-card__host-meta">
+                        <p class="listing-card__host-name"></p>
+                        <p class="listing-card__host-detail"></p>
+                    </div>
+                </div>
+                <div class="listing-card__footer-aside">
+                    <p class="listing-card__price"></p>
+                    <div class="listing-card__vibe" role="meter" aria-label="Explorer score" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <span class="listing-card__vibe-label"></span>
+                        <div class="listing-card__vibe-bar">
+                            <span class="listing-card__vibe-indicator"></span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </template>
+
+    <!-- No-JavaScript fallback message for users without scripting -->
+    <noscript>
+        <p class="no-js">This experience needs JavaScript to load the listings via fetch.</p>
+    </noscript>
+
+    <!-- Module script bootstrapping data fetch, filter logic, and theming -->
+    <script src="script.js" type="module"></script>
+</body>
+</html>

@@ -19,25 +19,37 @@
       <noscript>
         <p>JavaScript is disabled. Use these links:</p>
         <ul>
-          <li><a href="self-assessment.html">self-assessment.html</a></li>
+          <li><a href="HTML-CSS-Self-Assessment/self-assessment.html">Self Assessment</a></li>
+          <li><a href="JS-DOM-Self-Assessment/index.html">JS DOM Self Assessment</a></li>
         </ul>
       </noscript>
     </main>
     <script>
-      // Generated list of other .html files in this directory
       const pages = [
-        "self-assessment.html",
+        "HTML-CSS-Self-Assessment/self-assessment.html",
+        "JS-DOM-Self-Assessment/index.html",
       ];
 
-      const niceLabel = (name) => name
-        .replace(/\/.+\//, "")
-        .replace(/-/g, " ")
-        .replace(/\.html$/i, "");
+      const toTitleCase = (text) => text
+        .split(" ")
+        .filter(Boolean)
+        .map((word) => (word.length > 1 && word === word.toUpperCase() ? word : word.charAt(0).toUpperCase() + word.slice(1)))
+        .join(" ");
+
+      const niceLabel = (path) => {
+        const parts = path.replace(/\\/g, "/").split("/");
+        const fileName = parts[parts.length - 1];
+        const parent = parts.length > 1 ? parts[parts.length - 2] : "";
+        const base = fileName.replace(/\.html$/i, "");
+        const label = base.toLowerCase() === "index" && parent ? parent : base;
+        const cleaned = label.replace(/[-_]+/g, " ").replace(/\s+/g, " ").trim();
+        return cleaned ? toTitleCase(cleaned) : label;
+      };
 
       const container = document.getElementById("buttons");
       pages
-        .filter(p => p.toLowerCase() !== "index.html")
-        .forEach(p => {
+        .filter((p) => p.toLowerCase() !== "index.html")
+        .forEach((p) => {
           const a = document.createElement("a");
           a.href = p;
           a.className = "btn";
@@ -46,4 +58,4 @@
         });
     </script>
   </body>
-  </html>
+</html>

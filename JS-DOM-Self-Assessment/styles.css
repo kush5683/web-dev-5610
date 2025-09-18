@@ -1,0 +1,559 @@
+/* =======================
+   Theme variables
+   Defines dark/light palettes, spacing, and shared radii
+   ======================= */
+:root {
+    --bg: #0e1116;
+    --panel: #12161f;
+    --border: rgba(255, 255, 255, 0.08);
+    --text: #e8eaf0;
+    --muted: #a8b0bf;
+    --accent: #fc2500;
+    --accent-2: #2978a0;
+    --radius: 12px;
+    --maxw: 1100px;
+    --shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    --shadow-strong: 0 18px 38px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="light"] {
+    --bg: #f7f9fc;
+    --panel: #ffffff;
+    --border: rgba(10, 12, 16, 0.12);
+    --text: #0a0c10;
+    --muted: #4b5563;
+}
+
+/* =======================
+   Global resets and typography
+   ======================= */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    color-scheme: dark light;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(1200px 800px at 20% -10%, rgba(41, 120, 160, 0.12), transparent 60%),
+        radial-gradient(1000px 700px at 100% 0%, rgba(252, 37, 0, 0.08), transparent 60%),
+        var(--bg);
+    color: var(--text);
+    font-family: "JetBrains Mono", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "Roboto", "Ubuntu", "Cantarell", "Helvetica", "Arial", sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* =======================
+   Page header + theme toggle styling
+   ======================= */
+.page-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    backdrop-filter: saturate(150%) blur(10px);
+    border-bottom: 1px solid var(--border);
+    background-color: rgba(14, 17, 22, 0.85);
+}
+
+[data-theme="light"] .page-header {
+    background-color: rgba(247, 249, 252, 0.95);
+}
+
+.page-header__content {
+    padding: 40px 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.page-header__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.15;
+}
+
+.page-header p {
+    margin: 0;
+    max-width: 640px;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) - 4px);
+    padding: 10px 14px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+    color: var(--text);
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 200ms ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.theme-toggle__icon {
+    font-size: 1.1rem;
+}
+
+/* =======================
+   Search bar + refinement controls
+   ======================= */
+.tools {
+    border-bottom: 1px solid var(--border);
+    background-color: rgba(18, 22, 31, 0.7);
+    backdrop-filter: saturate(140%) blur(6px);
+}
+
+[data-theme="light"] .tools {
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.tools__inner {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+
+.tools__filter {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 1 280px;
+}
+
+.tools__filter label {
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.tools__filter input {
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) - 2px);
+    background-color: var(--panel);
+    color: var(--text);
+    font-size: 1rem;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.tools__filter input::placeholder {
+    color: rgba(168, 176, 191, 0.7);
+}
+
+.tools__filter input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(252, 37, 0, 0.18);
+}
+
+.tools__status {
+    margin: 0;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.tools__refinements {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 0 0 22px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 1 180px;
+}
+
+.filter-group label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+}
+
+.filter-group select {
+    padding: 11px 14px;
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) - 2px);
+    background-color: var(--panel);
+    color: var(--text);
+    font-size: 0.95rem;
+    appearance: none;
+    background-image: linear-gradient(135deg, rgba(252, 37, 0, 0.18), rgba(41, 120, 160, 0.18));
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px 100%;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(252, 37, 0, 0.18);
+}
+
+/* =======================
+   Listing grid + card layout
+   ======================= */
+.listing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 24px;
+    padding: 48px 24px 72px;
+}
+
+.listing-card {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 200ms ease;
+}
+
+.listing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-strong);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.listing-card__media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.listing-card__thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.listing-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 20px 22px;
+}
+
+.listing-card__header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.listing-card__title {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+.listing-card__link {
+    color: var(--text);
+    text-decoration: none;
+    position: relative;
+}
+
+.listing-card__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 160ms ease;
+}
+
+.listing-card__link:hover::after,
+.listing-card__link:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.listing-card__link:focus-visible {
+    outline: none;
+    color: var(--accent);
+}
+
+.listing-card__meta {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+.listing-card__description {
+    margin: 0;
+    font-size: 0.95rem;
+    color: rgba(232, 234, 240, 0.92);
+    max-height: 8.5rem;
+    overflow: hidden;
+}
+
+[data-theme="light"] .listing-card__description {
+    color: rgba(10, 12, 16, 0.78);
+}
+
+.listing-card__amenities h3 {
+    margin: 0 0 10px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+}
+
+.listing-card__amenities ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.listing-card__amenities li {
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: linear-gradient(160deg, rgba(252, 37, 0, 0.08), rgba(41, 120, 160, 0.08));
+    color: var(--muted);
+    font-size: 0.85rem;
+    transition: border-color 160ms ease, color 160ms ease;
+}
+
+.listing-card__amenities li mark {
+    background: none;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.listing-card__amenities-more {
+    color: var(--text);
+    border-color: var(--accent);
+    background: linear-gradient(160deg, rgba(252, 37, 0, 0.24), rgba(41, 120, 160, 0.24));
+}
+
+/* =======================
+   Card footer: host info, price, explorer score
+   ======================= */
+.listing-card__footer {
+    margin-top: auto;
+    padding: 18px 22px 22px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(18, 22, 31, 0.65);
+}
+
+[data-theme="light"] .listing-card__footer {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-top: 1px solid rgba(10, 12, 16, 0.08);
+}
+
+.listing-card__host {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex: 1 1 220px;
+}
+
+.listing-card__host-photo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 0 2px rgba(18, 22, 31, 0.65);
+}
+
+.listing-card__host-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.listing-card__host-name {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.listing-card__host-detail {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.listing-card__footer-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+    min-width: 200px;
+}
+
+.listing-card__price {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.listing-card__price span {
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.listing-card__vibe {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.listing-card__vibe-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.listing-card__vibe-bar {
+    position: relative;
+    width: 100%;
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(41, 120, 160, 0.25), rgba(252, 37, 0, 0.25));
+    overflow: hidden;
+}
+
+.listing-card__vibe-indicator {
+    position: absolute;
+    inset: 0;
+    width: 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    transition: width 300ms ease;
+}
+
+/* =======================
+   Empty/error states + misc utilities
+   ======================= */
+.listing-grid__empty,
+.listing-grid__error {
+    grid-column: 1 / -1;
+    padding: 48px;
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    border: 1px solid var(--border);
+    text-align: center;
+    font-weight: 600;
+    color: var(--muted);
+    box-shadow: var(--shadow);
+}
+
+.no-js {
+    margin: 40px auto;
+    max-width: 640px;
+    padding: 18px 24px;
+    border-radius: var(--radius);
+    background: linear-gradient(160deg, rgba(252, 37, 0, 0.24), rgba(41, 120, 160, 0.24));
+    color: var(--text);
+    font-weight: 600;
+}
+
+mark {
+    padding: 0 0.2em;
+    border-radius: 4px;
+    background: rgba(252, 37, 0, 0.25);
+    color: var(--text);
+}
+
+/* =======================
+   Responsive tweaks
+   ======================= */
+@media (max-width: 900px) {
+    .page-header__content {
+        padding: 32px 0 24px;
+    }
+
+    .listing-card__footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .listing-card__footer-aside {
+        align-items: flex-start;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .tools__inner {
+        align-items: stretch;
+    }
+
+    .tools__status {
+        padding-top: 8px;
+    }
+
+    .listing-grid {
+        padding: 40px 18px 64px;
+    }
+}

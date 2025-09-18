@@ -32,10 +32,11 @@ p {
   opacity: 0.8;
 }
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: .75rem;
   width: 100%;
+  align-items: stretch;
 }
 a.btn {
   display: inline-flex;
