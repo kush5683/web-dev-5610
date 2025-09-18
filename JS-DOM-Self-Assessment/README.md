@@ -1,3 +1,7 @@
+# Deployment
+
+<a href="https://web-dev-class.kushshah.net/JS-DOM-Self-Assessment/">Deployment Link</a>
+
 # San Francisco Stays Explorer
 
 This project turns the provided Airbnb dataset into an interactive gallery that loads the first 50 listings with async JavaScript. Each card highlights the listing details, host information, and a custom explorer score designed to surface high-impact stays at a glance.
