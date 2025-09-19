@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Design document for Kush Shah's personal homepage, including personas, user stories, and mockups."
+    />
+    <meta name="author" content="Kush Shah" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="design-document.css" />
+    <script
+      src="https://kit.fontawesome.com/d063311697.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Kush Shah | Design Document</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav aria-label="Primary navigation">
+        <div id="nav-logo-section" class="nav-section">
+          <a href="index.html" aria-label="Navigate to Kush Shah home">
+            <i class="fa-solid fa-code" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div id="nav-link-section" class="nav-section">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="resume.html">Resume</a>
+          <a href="design-document.html" aria-current="page">Design Document</a>
+        </div>
+        <div id="nav-social-section" class="nav-section">
+          <a href="https://github.com/kush5683" target="_blank" rel="noopener">
+            <i class="fa-brands fa-square-github" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/kush5683"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span>
+          </a>
+        </div>
+        <div id="nav-name-section" class="nav-section">
+          <p>Kush Shah</p>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="design-doc-hero" id="design-document">
+        <div class="design-doc-hero__inner">
+          <p class="design-doc__eyebrow">Personal Homepage Plan</p>
+          <h1>Design Document</h1>
+          <p class="design-doc-hero__lede">
+            A guided look at the thinking behind my personal homepage. It covers
+            the audience, goals, and interface decisions that shape every
+            element of the site.
+          </p>
+          <a class="button button--outline" href="index.html">Return to homepage</a>
+        </div>
+      </section>
+      <section class="design-doc design-doc--page">
+        <section
+          class="design-doc__section design-doc__description"
+          aria-labelledby="design-doc-description-title"
+        >
+          <div class="design-doc__section-heading">
+            <h2 id="design-doc-description-title">Project Description</h2>
+            <p>
+              This homepage acts as a central hub for prospective collaborators,
+              recruiters, and classmates to understand my cybersecurity journey.
+            </p>
+          </div>
+          <div class="design-doc__section-body">
+            <p>
+              The experience opens with an expressive hero section, then guides
+              visitors toward work samples, resume details, and connection
+              points. While the look embraces a technical aesthetic, the
+              content aims to stay personable and welcoming.
+            </p>
+            <ul>
+              <li>
+                Highlight professional milestones alongside ongoing graduate
+                coursework.
+              </li>
+              <li>
+                Make it easy to jump to resume, portfolio projects, and contact
+                links.
+              </li>
+              <li>
+                Showcase creative coding experiments that reflect my curiosity
+                beyond security engineering.
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section
+          class="design-doc__section design-doc__personas"
+          aria-labelledby="design-doc-personas-title"
+        >
+          <div class="design-doc__section-heading">
+            <h2 id="design-doc-personas-title">User Personas</h2>
+            <p>
+              Three primary audiences inform the tone, structure, and calls to
+              action across the homepage.
+            </p>
+          </div>
+          <div class="design-doc__card-grid">
+            <article class="design-doc-card" aria-labelledby="persona-amelia">
+              <h3 id="persona-amelia">Amelia Chen &mdash; Security Hiring Manager</h3>
+              <ul>
+                <li>
+                  Goals: Quickly evaluate my technical breadth and
+                  communication style.
+                </li>
+                <li>
+                  Needs: A concise snapshot plus links to deeper project write
+                  ups.
+                </li>
+                <li>
+                  Pain points: Limited interview bandwidth, so clarity up front
+                  is vital.
+                </li>
+              </ul>
+            </article>
+            <article class="design-doc-card" aria-labelledby="persona-diego">
+              <h3 id="persona-diego">Diego Ruiz &mdash; Graduate Classmate</h3>
+              <ul>
+                <li>
+                  Goals: Spot shared interests for upcoming course projects or
+                  hackathons.
+                </li>
+                <li>
+                  Needs: Proof of collaboration tools, availability, and focus
+                  areas.
+                </li>
+                <li>
+                  Pain points: Hard to gauge team fit when classmates' work is
+                  scattered across platforms.
+                </li>
+              </ul>
+            </article>
+            <article class="design-doc-card" aria-labelledby="persona-lina">
+              <h3 id="persona-lina">Lina Patel &mdash; Creative Technologist</h3>
+              <ul>
+                <li>
+                  Goals: Find inspiration in the crossover between artful UI and
+                  rigorous engineering.
+                </li>
+                <li>
+                  Needs: Indicators that my experiments balance playfulness with
+                  technical depth.
+                </li>
+                <li>
+                  Pain points: Many portfolios feel interchangeable and lack a
+                  personal narrative.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+        <section
+          class="design-doc__section design-doc__stories"
+          aria-labelledby="design-doc-stories-title"
+        >
+          <div class="design-doc__section-heading">
+            <h2 id="design-doc-stories-title">User Stories</h2>
+            <p>
+              Each persona informs a key interaction that the homepage must make
+              effortless.
+            </p>
+          </div>
+          <div class="design-doc__card-grid">
+            <article class="design-doc-card design-doc-card--story">
+              <h3>Hiring Manager</h3>
+              <p>
+                <span class="story-role">As a hiring manager,</span> I want to
+                skim a summary of Kush's recent roles and skills so that I can
+                decide whether to schedule an interview.
+              </p>
+            </article>
+            <article class="design-doc-card design-doc-card--story">
+              <h3>Classmate</h3>
+              <p>
+                <span class="story-role">As a classmate,</span> I want to see
+                collaboration interests and current coursework so that I can
+                pitch project ideas that align with Kush's goals.
+              </p>
+            </article>
+            <article class="design-doc-card design-doc-card--story">
+              <h3>Creative Technologist</h3>
+              <p>
+                <span class="story-role">As a fellow creator,</span> I want to
+                explore interactive experiments so that I can draw inspiration
+                and offer feedback for future iterations.
+              </p>
+            </article>
+          </div>
+        </section>
+        <section
+          class="design-doc__section design-doc__mockup"
+          aria-labelledby="design-doc-mockup-title"
+        >
+          <div class="design-doc__section-heading">
+            <h2 id="design-doc-mockup-title">Design Mockup</h2>
+            <p>
+              The mockup balances a bold hero treatment with modular content
+              blocks that can grow alongside future projects.
+            </p>
+          </div>
+          <figure class="design-doc__mockup-figure">
+            <img
+              src="assets/design-mockup.png"
+              alt="High-fidelity mockup of the personal homepage highlighting the hero, persona cards, and user story sections."
+            />
+            <figcaption>
+              Desktop exploration showing the hero banner, persona cards, and
+              user stories arranged in the new grid system.
+            </figcaption>
+          </figure>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
+
+
+
+

@@ -1,0 +1,139 @@
+.design-doc {
+  border-top: 1px solid var(--border-color);
+  margin: 0 auto;
+  width: min(1100px, 100%);
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 6vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  background-color: rgba(15, 17, 20, 0.85);
+  border-radius: 2rem;
+  box-shadow: 0 20px 60px rgba(5, 6, 8, 0.55);
+}
+
+.design-doc--page {
+  margin-top: clamp(2.5rem, 8vw, 5rem);
+}
+
+.design-doc__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.design-doc__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 60ch;
+}
+
+.design-doc__grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.design-doc__panel {
+  background-color: rgba(27, 30, 34, 0.8);
+  border: 1px solid var(--border-color);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  backdrop-filter: blur(6px);
+}
+
+.design-doc__panel ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.persona + .persona {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.25rem;
+}
+
+.stories {
+  list-style: disc;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0;
+}
+
+.story-role {
+  color: #fc2500;
+  font-weight: 600;
+}
+
+.design-doc__mockup {
+  margin: 0;
+  background: rgba(36, 41, 46, 0.5);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.design-doc__wireframe {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.design-doc__panel figcaption {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: none;
+  background: linear-gradient(135deg, #2978a0, #fc2500);
+  color: #ffffff;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(16, 18, 21, 0.55);
+}
+
+.button--outline {
+  background: transparent;
+  border: 1px solid #fc2500;
+}
+
+.button--outline:hover {
+  background: rgba(252, 37, 0, 0.1);
+  box-shadow: none;
+}
+
+@media (max-width: 640px) {
+  .design-doc {
+    border-radius: 1.5rem;
+    padding: 2rem;
+  }
+}
+
+main{
+width: 100%;
+}

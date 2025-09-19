@@ -1,0 +1,23 @@
+@font-face{
+    font-family: mono;
+    src: url('fonts/SourceCodePro-Regular.ttf')
+  }
+
+body{
+    background-color: rgb(36, 41, 46);;
+}
+
+h1,h2,h3,a,p,span{
+    font-family: "mono";
+    font-weight: 400;
+    color: white;
+  }
+
+.container{
+    margin: auto;
+    width: 50%;
+    border: 3px solid rgba(255,255,255,0.1);
+    padding: 10px;
+    -ms-transform: translateY(50%);
+    transform: translateY(50%);
+}

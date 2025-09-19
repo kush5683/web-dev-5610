@@ -1,0 +1,80 @@
+@font-face {
+  font-family: mono;
+  src: url("fonts/SourceCodePro-Regular.ttf");
+}
+
+:root {
+  --background-color: rgb(36, 41, 46);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --inactive-background-color: rgb(27, 30, 34);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  flex-grow: 1;
+}
+
+/* h1{
+  margin: 1vh;
+} */
+
+main>article {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 2fr 1fr;
+}
+
+main>article>.article-section {
+  /* height: 100%; */
+  padding-left: 25px;
+}
+
+main>article>.Education,
+main>article>.Projects {
+  border-left: 1px solid var(--border-color);
+}
+
+main>article>.Education,
+main>article>.Skills {
+  border-top: 1px solid var(--border-color);
+  /* padding-bottom: 10px; */
+}
+
+main>article>.article-section>.section-title {
+  font-size: 2rem;
+  color: #fc2500;
+}
+
+article > .article-section > p> a {
+  color: blue;
+}
+article>.article-section>p>a {
+  color: #fc2500;
+}
+
+article>.article-section>p>a:hover {
+  text-decoration: underline;
+}
+
+.skill-sections-programming,
+.skill-sections-tools {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.skill-sections-programming>p,
+.skill-sections-tools>p {
+  padding-left: 10px;
+
+}
+
+.skill-sections-tools,
+.skill-sections-education {
+  /* padding-bottom: 15px; */
+  position: absolute;
+}

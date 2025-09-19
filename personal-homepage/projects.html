@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Project portfolio for Kush Shah featuring security engineering, automation, and creative coding work."
+    />
+    <meta name="author" content="Kush Shah" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="projects.css" />
+    <script
+      src="https://kit.fontawesome.com/d063311697.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Kush Shah | Projects</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav aria-label="Primary navigation">
+        <div id="nav-logo-section" class="nav-section">
+          <a href="index.html" aria-label="Navigate to Kush Shah home">
+            <i class="fa-solid fa-code" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div id="nav-link-section" class="nav-section">
+          <a href="index.html">Home</a>
+          <a href="projects.html" aria-current="page">Projects</a>
+          <a href="resume.html">Resume</a>
+          <a href="design-document.html">Design Document</a>
+        </div>
+        <div id="nav-social-section" class="nav-section">
+          <a href="https://github.com/kush5683" target="_blank" rel="noopener">
+            <i class="fa-brands fa-square-github" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/kush5683"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            <span class="sr-only">LinkedIn</span>
+          </a>
+        </div>
+        <div id="nav-name-section" class="nav-section">
+          <p>Kush Shah</p>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="projects-hero">
+        <div class="projects-hero__body">
+          <div class="hero-console" aria-live="polite">
+            <span class="hero-console__prompt">$</span>
+            <span class="hero-console__text" data-creative-output>
+              <a
+                class="hero-console__link"
+                data-creative-link
+                href="https://github.com/kush5683"
+                target="_blank"
+                rel="noopener"
+              >
+                github.com/kush5683
+              </a>
+            </span>
+            <span class="hero-console__cursor" data-creative-cursor aria-hidden="true"></span>
+          </div>
+          <p class="projects-hero__lede">
+            Security engineering, automation, and creative coding projects exploring how resilient systems and human-centered experiences can co-exist.
+          </p>
+        </div>
+      </section>
+      <section class="projects-gallery" id="projects">
+        <header class="projects-gallery__header">
+          <div>
+            <p class="projects-gallery__eyebrow">Featured Work</p>
+            <h1 class="projects-gallery__title">Curated Projects</h1>
+            <p class="projects-gallery__description">
+              Filter by focus area to explore the range of coursework, internships, and personal experiments I maintain across GitHub.
+            </p>
+          </div>
+          <div
+            class="projects-filters"
+            role="toolbar"
+            aria-label="Filter projects by focus area"
+            data-filter-chips
+          ></div>
+          <button type="button" class="projects-clear" data-clear-filters hidden>
+            Clear filters
+          </button>
+        </header>
+        <div class="projects-grid" data-project-grid></div>
+        <p class="projects-empty" hidden data-empty-state>
+          No projects match the selected filter yet. Try another tag to continue exploring.
+        </p>
+        <noscript>
+          <p class="projects-empty">
+            JavaScript is disabled, so filtering is unavailable. Enable JavaScript to explore the project gallery interactively.
+          </p>
+        </noscript>
+      </section>
+    </main>
+    <script type="module" src="js/creative.js"></script>
+    <script type="module" src="js/projects.js"></script>
+  </body>
+</html>
+
