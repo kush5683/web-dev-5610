@@ -114,7 +114,7 @@ main {
   display: flex;
 }
 
-main > article {
+.hero {
   display: grid;
   flex: 1;
   min-height: 100%;
@@ -123,33 +123,37 @@ main > article {
   position: relative;
 }
 
-main > article > .article-section {
+.hero > .hero-section {
   height: 100%;
 }
 
-main > article > .article-description-section,
-main > article > .article-blank-section {
+.hero > .hero-photo,
+.hero > .hero-about {
   border-left: 1px solid var(--border-color);
 }
 
-main > article > .article-title-section,
-main > article > .article-blank-section {
+.hero > .hero-signature,
+.hero > .hero-blank {
   border-top: 1px solid var(--border-color);
 }
 
-main > article:first-child > .article-image-section {
+.hero > .hero-photo {
   background-image: url("assets/article1-img.avif");
 }
 
-main > article > .article-image-section {
+.hero > .hero-photo,
+.hero > .hero-about,
+.hero > .hero-signature,
+.hero > .hero-blank {
   position: relative;
-  background-position: center;
-  background-size: cover;
-  height: 100%;
 }
 
-main > article > .article-description-section {
-  position: relative;
+.hero > .hero-photo {
+  background-position: center;
+  background-size: cover;
+}
+
+.hero > .hero-about {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -157,33 +161,33 @@ main > article > .article-description-section {
   padding: 4rem;
 }
 
-main > article > .article-description-section > p {
+.hero > .hero-about > p {
   font-size: 1.5rem;
   text-align: justify;
 }
 
-main > article > .article-description-section > p > a {
+.hero > .hero-about > p > a {
   color: #fc2500;
 }
 
-main > article > .article-description-section > p > a:hover {
+.hero > .hero-about > p > a:hover {
   text-decoration: underline;
 }
 
 #nav-name-section,
-main > article > .article-blank-section {
+.hero > .hero-blank {
   background-color: var(--inactive-background-color);
 }
 
-.article-blank-section {
+.hero-blank {
   position: relative;
 }
 
-.article-blank-section:hover:before {
+.hero-blank:hover:before {
   background-position: 100% 100%;
 }
 
-.article-blank-section:before {
+.hero-blank:before {
   background: linear-gradient(
     130deg,
     transparent 0% 33%,
@@ -203,7 +207,7 @@ main > article > .article-blank-section {
   z-index: 1;
 }
 
-main > article > .article-title-section {
+.hero-signature {
   margin: 0;
   align-items: center;
   justify-content: center;
@@ -213,13 +217,28 @@ main > article > .article-title-section {
   background-size: 5vmin 5vmin;
 }
 
-main > article > .article-title-section > h1 {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+.hero-signature > h1 {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   position: absolute;
   font-size: 200px;
   font-family: "title-font";
+}
+
+.article-typewriter {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.article-typewriter > a {
+  color: #fc2500;
+}
+
+.article-typewriter__hint {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .sr-only {
@@ -238,20 +257,20 @@ main > article > .article-title-section > h1 {
     gap: 2rem;
   }
 
-  main > article {
+  .hero {
     grid-template-columns: 1fr;
     grid-template-rows: minmax(320px, 1fr) auto auto;
   }
 
-  main > article > .article-blank-section {
+  .hero > .hero-blank {
     display: none;
   }
 
-  main > article > .article-description-section {
+  .hero > .hero-about {
     padding: 3rem;
   }
 
-  main > article > .article-title-section > h1 {
+  .hero > .hero-signature > h1 {
     position: relative;
     text-align: center;
     font-size: clamp(4rem, 18vw, 8rem);
@@ -275,10 +294,7 @@ main > article > .article-title-section > h1 {
     justify-content: center;
   }
 
-  main > article > .article-description-section {
+  .hero > .hero-about {
     padding: 2rem;
   }
-
 }
-
-
