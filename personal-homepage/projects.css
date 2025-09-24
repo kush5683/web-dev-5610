@@ -1,3 +1,4 @@
+/* consider putting css in a separate folder (css folder) to keep file struct organized */
 .projects-hero {
   padding: clamp(3rem, 8vw, 6rem) clamp(2rem, 8vw, 6rem);
   background: radial-gradient(circle at top left, rgba(41, 120, 160, 0.25), transparent 60%),
@@ -285,6 +286,7 @@
   font-size: 1rem;
 }
 
+/* Nice implementation of responsive web design */
 @media (max-width: 900px) {
   .projects-gallery__header {
     gap: 1.5rem;
